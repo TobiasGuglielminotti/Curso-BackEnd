@@ -5,13 +5,13 @@ class ProductManager {
     }
   
     addProduct(title, description, price, thumbnail, code, stock) {
-      // Validar que todos los campos sean obligatorios
+      // Valido que todos los campos sean obligatorios
       if (!title || !description || !price || !thumbnail || !code || !stock) {
         console.log("Todos los campos son obligatorios.");
         return;
       }
   
-      // Validar que el campo "code" no se repita
+      // Valido que el campo "code" no se repita
       if (this.products.find((product) => product.code === code)) {
         console.log("El código ya existe.");
         return;
@@ -28,7 +28,7 @@ class ProductManager {
       );
       newProduct.id = ++this.productIdCounter;
   
-      // Agregar el nuevo producto al arreglo de productos
+      // Agrege el nuevo producto al arreglo de productos
       this.products.push(newProduct);
     }
   
@@ -44,10 +44,3 @@ class ProductManager {
       return product;
     }
   }
-
-const myProductManager = new ProductManager();
-
-myProductManager.addProduct("producto prueba", "este es un producto de prueba", 0,"img.jpg","0000",0)
-  
-myProductManager.addProduct(newProduct);
-console.log(myProductManager.getProducts())
